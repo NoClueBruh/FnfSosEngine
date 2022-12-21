@@ -32,6 +32,7 @@ flixel-addons
 flixel-ui
 hscript
 newgrounds
+compileTime
 ```
 So for each of those type `haxelib install [library]` so shit like `haxelib install newgrounds`
 

@@ -1480,7 +1480,6 @@ class PlayState extends MusicBeatState
 			];
 			goingMid = [true, true];
 		}
-
 		FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
 
