@@ -232,4 +232,10 @@ class ShowMemory extends ToggleOption {override function action(args:Array<Dynam
 class UseVCR extends ToggleOption {override function action(args:Array<Dynamic>){ super.action(args); FlxG.save.data.useVcr = boolItem; }}
 class UILayout extends SliderOption {override function action(args:Array<Dynamic>) { super.action(args); FlxG.save.data.UILayout = getSelected().toLowerCase();}}
 class SmoothCam extends ToggleOption {override function action(args:Array<Dynamic>){ super.action(args); FlxG.save.data.smoothCam = boolItem; }}
-class UseVsync extends ToggleOption {override function action(args:Array<Dynamic>){ super.action(args); FlxG.save.data.vsync = boolItem; }}
+class UseVsync extends ToggleOption {
+    override function action(args:Array<Dynamic>)
+    {
+         super.action(args); 
+         FlxG.save.data.vsync = boolItem; 
+    }
+}

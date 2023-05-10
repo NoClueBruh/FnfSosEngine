@@ -74,6 +74,7 @@ class ApplicationBackround
         #end
         
     }
+    private var prevSync:Bool = false;
     private function startUpdate()
     {
         var frameRate:Int = Std.int(Math.abs(FlxG.save.data.fps_cap));
@@ -94,20 +95,22 @@ class ApplicationBackround
             }
     
             @:privateAccess
+            if(prevSync != false)
             {
-                Lib.current.stage.window.__attributes.context.vsync = false;
-                FlxG.drawFramerate = frameRate;
-                FlxG.updateFramerate = frameRate;    
-            } 
+                FlxG.stage.window.context.attributes.vsync =false;
+            }
+            Lib.current.stage.frameRate = frameRate; 
+            prevSync = false;
         }
         else 
         {
             @:privateAccess
+            if(prevSync != true)
             {
-                Lib.current.stage.window.__attributes.context.vsync = true;
-                FlxG.drawFramerate = Lib.current.stage.window.displayMode.refreshRate;
-                FlxG.updateFramerate = Lib.current.stage.window.displayMode.refreshRate;
-            } 
+                FlxG.stage.window.context.attributes.vsync =true;
+                Lib.current.stage.frameRate = Application.current.window.displayMode.refreshRate;
+            }
+            prevSync = true;
         }
 
         enteredFrames++;

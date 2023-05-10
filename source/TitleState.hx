@@ -86,6 +86,7 @@ class TitleState extends MusicBeatState
 		*/
 
 		FlxG.save.bind('funkin', 'ninjamuffin99');
+		CallBackMaster.Option.startOptions(false);
 		PlayerSettings.init();
 		if (!initialized)
 		{

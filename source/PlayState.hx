@@ -1,5 +1,6 @@
 package;
 
+import flixel.input.keyboard.FlxKeyboard;
 import lime.system.Clipboard;
 import Closet.NoteArrayType;
 import Closet.NoteArray;
@@ -123,6 +124,8 @@ class PlayState extends MusicBeatState
 	private var keyReleases:NoteArray = new NoteArray(NoteArrayType.RELEASE);
 	@:noPrivateAccess
 	private var keys:NoteArray = new NoteArray(NoteArrayType.HOLD);
+
+	public var opponentHitNote:Note->Void = (note)->{};
 
 	public function new()
 	{
@@ -1043,7 +1046,6 @@ class PlayState extends MusicBeatState
 			swagCounter += 1;
 			// generateSong('fresh');
 		}, 5);
-		startTimer.onComplete
 	}
 
 	var previousFrameTime:Int = 0;
@@ -1646,6 +1648,7 @@ class PlayState extends MusicBeatState
 						if (SONG.needsVoices)
 							vocals.volume = 1;
 						dad.holdTimer = 0;
+						opponentHitNote(daNote);
 
 						if(FlxG.save.data.lightstrums == "animated")
 							lightEnemyStrum(daNote.noteData);
@@ -1685,7 +1688,6 @@ class PlayState extends MusicBeatState
 
 		if (!inCutscene)
 			(!FlxG.save.data.botplay ? keyShit : botplayInput)();
-
 		#if debug
 		if (FlxG.keys.justPressed.ONE)
 			endSong();

@@ -3,7 +3,6 @@ package;
 import lime.utils.Bytes;
 import haxe.io.BytesInput;
 import haxe.zip.Reader;
-import SOSVID.SOSVID_Data_reader;
 import openfl.system.System;
 import vlc.MP4Handler;
 import flixel.FlxSprite;
