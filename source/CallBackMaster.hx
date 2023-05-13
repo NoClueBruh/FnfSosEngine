@@ -10,11 +10,6 @@ using StringTools;
 
 class CallBackMaster 
 {
-    //TODO add more thingies bruh
-    public static function startUp()
-    {
-        Option.startOptions(false);
-    }
 }
 
 enum OptionType 
@@ -70,7 +65,7 @@ class Option
         if(FlxG.save.data.Accuracy == null || reset)
             FlxG.save.data.Accuracy = "simple";
         if(FlxG.save.data.healthBarColors == null || reset)
-            FlxG.save.data.healthBarColors = false;
+            FlxG.save.data.healthBarColors = true;
         if(FlxG.save.data.pitch == null || reset)
             FlxG.save.data.pitch = 1;
         if(FlxG.save.data.showTime == null || reset)

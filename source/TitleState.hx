@@ -89,10 +89,7 @@ class TitleState extends MusicBeatState
 		CallBackMaster.Option.startOptions(false);
 		PlayerSettings.init();
 		if (!initialized)
-		{
-			CallBackMaster.startUp();
 			ApplicationBackround.init();	
-		}
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
